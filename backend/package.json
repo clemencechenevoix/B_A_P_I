@@ -1,0 +1,12 @@
+{
+  "name": "BAPI",
+  "version": "1.0.0",
+  "description": "API REST BAPI",
+  "scripts": {
+    "seed": "node ./src/database/seed.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "pg": "^8.23.0"
+  }
+}
