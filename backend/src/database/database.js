@@ -1,20 +1,14 @@
 // require
 const {Client} = require('pg')
-//require('dotenv').config()
-
-const DB_HOST = "localhost"
-const DB_USER = "postgres"
-const DB_PORT = 5432
-const DB_PASSWORD = "V+sg(<CCM&J::7t"
-const DB_NAME = "BAPI"
+require('dotenv').config()
 
 // function
 const connexion = new Client({
-    host: DB_HOST,
-    user: DB_USER,
-    port: DB_PORT,
-    password: DB_PASSWORD,
-    database: DB_NAME
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    port: process.env.DB_PORT,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
 })
 
 connexion.connect().then(() => console.log("connected"))
