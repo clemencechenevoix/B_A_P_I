@@ -116,9 +116,6 @@ const modifyFlower = async (req) => {
     let param = []
     let query= ``
 	while (index < req.body.keys.length) {
-        console.log(index)
-        console.log(req.body.keys[index])
-        console.log(req.body.values[index])
 		query = `
 		UPDATE flower 
 		SET `
@@ -130,7 +127,7 @@ const modifyFlower = async (req) => {
 		        FROM family
 		        WHERE family.familyName ILIKE $1
 	        `, [`%${req.body.values[index].trim()}%`])
-            console.log(familyId)
+
             if (familyId.rows.length == 0) {
 		        throw new Error('FAMILY_NOT_FOUND')
 	        }
