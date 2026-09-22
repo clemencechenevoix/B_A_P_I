@@ -1,0 +1,14 @@
+// Server launcher
+
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+const app = require('./app.js');
+
+const PORT = process.env.PORT || 8080;
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
+});
