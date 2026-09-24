@@ -192,7 +192,7 @@ const removeFlower = async (req) => {
 		WHERE flower.flowerId = $1
 	`, [req.params.id])
 
-	return result
+	return result.rows
 
 }
 
