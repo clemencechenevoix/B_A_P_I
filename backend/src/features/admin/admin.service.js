@@ -85,7 +85,8 @@ const removeFamily = async (req) => {
 		throw new Error('FAMILY_NOT_FOUND')
 	}
 
-	result = await connexion.query(`                                                                                                                                                                                                                                                                                                                                                                                                                              		DELETE FROM family
+	await connexion.query(`
+		DELETE family                                                                                                                                                                                                                                                                                                                                                                                                                              		DELETE FROM family
 		WHERE family.familyId = $1
 	`, [req.params.id])
 	
@@ -175,7 +176,7 @@ const removeLocalisation = async (req) => {
 		throw new Error('LOCALISATION_NOT_FOUND')
 	}
 
-	result = await connexion.query(`
+	await connexion.query(`
 		DELETE FROM localisation
 		WHERE localisation.localisationId = $1
 	`, [req.params.id])
