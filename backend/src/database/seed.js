@@ -1,6 +1,7 @@
 // require
 const {connexion} = require('./database.js')
 const { hashPassword } = require('../security/encrypt.js')
+require('dotenv').config()
 
 // function
 
@@ -47,8 +48,9 @@ async function updateSeedUser(value) {
     connexion.query(`
         UPDATE users
         SET usersPassword = $1,
-        WHERE userslogin = $2
-    `,  [hashedPassword, hashedId], (err)=>{
+        SET usersRole = $2,
+        WHERE userslogin = $3
+    `,  [hashedPassword, value["usersRole"], hashedId], (err)=>{
 
         connexion.end
         return handleErr(err)
@@ -84,12 +86,11 @@ function findAdmin(value) {
 */
 async function insertAdmin(value) {
     const hashedPassword = await hashPassword(value["usersPassword"])
-    const hashedId = await hashPassword(value["usersLogin"])
     
     connexion.query(`
-        INSERT INTO users(userslogin, usersPassword)
-        VALUES ($1, $2)
-    `,  [hashedId, hashedPassword], (err)=>{
+        INSERT INTO users(userslogin, usersPassword, usersRole)
+        VALUES ($1, $2, $3)
+    `,  [value["usersLogin"], hashedPassword, value["usersRole"]], (err)=>{
 
         connexion.end
         return handleErr(err)
@@ -97,5 +98,4 @@ async function insertAdmin(value) {
 }
 
 // call
-
-findAdmin({"usersLogin":"admintest", "usersPassword":"paswordtest"})
+findAdmin({"usersLogin":process.env.ADMIN_LOGIN, "usersPassword":process.env.ADMIN_PASSWORD, "usersRole": process.env.ADMIN_ROLE})

@@ -2,7 +2,8 @@ CREATE TABLE
 IF NOT EXISTS
     users(
         userslogin VARCHAR(64) NOT NULL PRIMARY KEY,
-        usersPassword VARCHAR(64) NOT NULL
+        usersPassword VARCHAR(64) NOT NULL,
+        usersRole VARCHAR(20) NOT NULL
     );
 
 CREATE TABLE 
