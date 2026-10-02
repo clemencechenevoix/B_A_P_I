@@ -13,7 +13,7 @@ const {login_services} = require('./auth.service')
 const login = async (req, res) => {
     try {
         const result = await login_services(req)
-        res.status(200).json({ message: "Information correctly collected", result: result })
+        res.status(200).json({ message: "correctly loged in", result: result })
     } catch (err) {
         if (err.message == 'INFORMATIONS_INCORRECTES') {
             res.status(409).json({ error: "Wrong information have been provied"})
