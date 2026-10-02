@@ -1,0 +1,84 @@
+.divFlowerCard{
+    margin: 2%;
+
+    border-style: groove;
+    border-color: #944575;
+    border-radius: 0.8em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.divAdd{
+    margin: 2%;
+
+    border-style: groove;
+    border-color: #944575;
+    border-radius: 0.8em;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.aAdd{
+    text-decoration: none ;
+    color: black;
+}
+
+.divFlowerForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.submitButton{
+    align-self: center;
+    margin: 2%;
+}
+
+#divDeleteFlower{
+    margin: 2%;
+
+    border-style: groove;
+    border-color: #944575;
+    border-radius: 0.8em;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#divFlowerIdCard{
+    margin: 2%;
+
+    border-style: groove;
+    border-color: #944575;
+    border-radius: 0.8em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#divNavBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    margin: 2%;
+}
+
+input {
+    margin: 2%;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
