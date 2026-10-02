@@ -86,8 +86,13 @@ const removeFamily = async (req) => {
 	}
 
 	await connexion.query(`
-		DELETE family                                                                                                                                                                                                                                                                                                                                                                                                                              		DELETE FROM family
+		DELETE FROM family
 		WHERE family.familyId = $1
+	`, [req.params.id])
+
+	await connexion.query(`
+		DELETE FROM flower
+		WHERE flower.familyId = $1
 	`, [req.params.id])
 	
 	return result.rows
@@ -179,6 +184,11 @@ const removeLocalisation = async (req) => {
 	await connexion.query(`
 		DELETE FROM localisation
 		WHERE localisation.localisationId = $1
+	`, [req.params.id])
+
+	await connexion.query(`
+		DELETE FROM flower
+		WHERE flower.localisationId = $1
 	`, [req.params.id])
 	
 	return result.rows
