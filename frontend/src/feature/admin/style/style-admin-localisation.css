@@ -1,0 +1,61 @@
+.divAdd{
+    margin: 2%;
+
+    border-style: groove;
+    border-color: #944575;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.aAdd{
+    text-decoration: none ;
+    color: black;
+}
+
+.divLocalisationCard {
+    margin: 2%;
+
+    border-style: groove;
+    border-color: #944575;
+    border-radius: 0.8em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.divLocalisationForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#divDeleteLocalisation{
+    margin: 2%;
+
+    border-style: groove;
+    border-color: #944575;
+    border-radius: 0.8em;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+label {
+    margin: 2%;
+}
+
+input {
+    margin: 2%;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}

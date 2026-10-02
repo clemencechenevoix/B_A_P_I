@@ -1,0 +1,30 @@
+.divAdd{
+    margin: 2%;
+
+    border-style: groove;
+    border-color: #944575;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.aAdd{
+    text-decoration: none ;
+    color: black;
+}
+
+.divFamilyForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+label {
+    margin: 2%;
+}
+
+input {
+    margin: 2%;
+}
