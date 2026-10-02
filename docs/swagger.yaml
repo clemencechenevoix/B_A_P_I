@@ -1,0 +1,163 @@
+openapi: 3.0.4 //
+info:
+  title: B.A.P.I
+  description: //
+  version: 0.1.9 //
+
+
+servers:
+  - url: //
+    description: Main production server
+paths:
+  /admin:
+    get:
+      summary: Show all the families in the database for the admin
+      responses:
+        "200": # status code
+          description: A JSON array of families names and a confirmation message
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+    post:
+      summary: Create a new family in the database (only accessible as admin)
+      responses:
+        "200": # status code
+          description: A message confirming the creation of the family
+          content:
+            application/json:
+              schema:
+                type: string
+    put:
+      summary: Update the family of the given id in the database (only accessible as admin)
+        responses:
+          "200": # status code
+            description: A JSON containing the information of the updated family and a confirmation message
+            content:
+              application/json:
+                schema:
+                  type: hash
+                  items:
+                    type: string
+    delete:
+      summary: Remove the family of the given id in the database (only accessible as admin)
+        responses:
+          "200": # status code
+            description: A JSON containing the information of the removed family and a confirmation message
+            content:
+              application/json:
+                schema:
+                  type: hash
+                  items:
+                    type: string
+    get:
+       summary: Show all the localisation in the database for the admin
+       responses:
+         "200": # status code
+           description: A JSON array of localisation names and a confirmation message
+           content:
+              application/json:
+                 schema:
+                    type: hash
+                    items:
+                       type: string
+    post:
+      summary: Create a new localisation in the database (only accessible as admin)
+      responses:
+        "200": # status code
+          description: A message confirming the creation of the family
+          content:
+            application/json:
+              schema:
+                type: string
+    put:
+      summary: Update the localisation of the given id in the database (only accessible as admin)
+        responses:
+          "200": # status code
+            description: A JSON containing the information of the updated localisation and a confirmation message
+            content:
+              application/json:
+                schema:
+                  type: hash
+                  items:
+                    type: string
+    delete:
+      summary: Remove the localisation of the given id in the database (only accessible as admin)
+        responses:
+          "200": # status code
+            description: A JSON containing the information of the removed localisation and a confirmation message
+            content:
+              application/json:
+                schema:
+                  type: hash
+                  items:
+                    type: string
+  /auth:
+      post:
+        summary: Allows the user to login to the app. If the id given is an admin, they are assigned as administrator
+          description:
+          responses:
+            "200": # status code
+              description: A message confirming the log in of the user
+              content:
+                application/json:
+                  schema:
+                    type: string
+  /catalog:
+      get:
+        summary: Shows the catalog
+          responses:
+            "200": # status code
+              description: A JSON containing all of the informations of the flowers, stocked as a JSON
+              content:
+                application/json:
+                  schema:
+                    type: hash
+                    items:
+                      type: hash
+                      items:
+                         type: string
+      get:
+        summary: Show the information of the flower of the corresponding id
+          responses:
+            "200": # status code
+              description: A JSON array of the items informations and a confirmation message
+              content:
+                application/json:
+                  schema:
+                    type: hash
+                    items:
+                      type: string
+      post:
+        summary: Create a new item in the catalog (only accessible as admin)
+          responses:
+            "200": # status code
+              description: A message confirming the creation of the item
+              content:
+                application/json:
+                  schema:
+                    type: string
+      put:
+        summary: Update the item of the given id in the catalog (only accessible as admin)
+          responses:
+            "200": # status code
+              description: A JSON containing the information of the updated item and a confirmation message
+              content:
+                application/json:
+                  schema:
+                    type: hash
+                    items:
+                      type: string
+      delete:
+        summary: Remove the item of the given id in the catalog (only accessible as admin)
+          responses:
+            "200": # status code
+              description: A JSON containing the information of the removed item and a confirmation message
+              content:
+                application/json:
+                  schema:
+                    type: hash
+                    items:
+                      type: string
