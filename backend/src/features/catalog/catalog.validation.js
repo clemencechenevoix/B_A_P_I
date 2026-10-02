@@ -28,7 +28,7 @@ const validationId = (req, res, next) => {
 * @return {Function: next} or {Error} the next function or an error if the id is not valid
 */
 const validationPage = (req, res, next) => {
-	if (req.body.page == null || isNaN(parseInt(req.body.page))) {
+	if (req.params.page == null || isNaN(parseInt(req.params.page))) {
 		return res.status(400).json({error: "page need to be a number"})
 	}
 	next()

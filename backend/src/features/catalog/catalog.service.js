@@ -10,7 +10,7 @@ const { connexion } = require('../../database/database.js')
 */
 const getFlower = async (req) => {
     let query = `
-        SELECT flower.flowerId, flower.flowerPicture , flower.flowerName
+        SELECT flower.flowerId, flower.flowerPicture , flower.flowerName, family.familyName
 	    FROM flower
         JOIN localisation ON flower.localisationId = localisation.localisationId
         JOIN family ON flower.familyId = family.familyId 
@@ -19,26 +19,31 @@ const getFlower = async (req) => {
     let paramIndex = 1
 
     const limit = 20
-    const offset = req.body.page * limit
+    const offset = req.params.page * limit
 
-    if(req.body.search != null) {
-        query += `
-            WHERE flower.flowerName ILIKE $${paramIndex}
-            OR localisation.localisationName ILIKE $${paramIndex}
-            OR family.familyName ILIKE $${paramIndex} 
-        `
-        paramIndex += 1
-        param.push(`%${req.body.search.trim()}%`)
-    }
+    // if(req.query.search != null) {
+    //     query += `
+    //         WHERE flower.flowerName ILIKE $${paramIndex}
+    //         OR localisation.localisationName ILIKE $${paramIndex}
+    //         OR family.familyName ILIKE $${paramIndex} 
+    //     `
+    //     paramIndex += 1
+    //     param.push(`%${req.query.search.trim()}%`)
+    // }
 
     query += `
         ORDER BY flower.flowerName ASC LIMIT $${paramIndex} OFFSET $${paramIndex + 1}`
     param.push(limit, offset)
     const result = await connexion.query(query, param)
    	
+	const max = await connexion.query(`
+		SELECT COUNT(*) FROM FLOWER	
+	`)
+		
     return {
         "result": result.rows,
-        "page": req.body.page
+        "page": req.params.page,
+		"maxPage": Math.floor(max.rows[0]["count"] / limit)
     }
 }
 
