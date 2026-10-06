@@ -11,7 +11,7 @@ const TEXT_BUTTON = "submit"
 // api request
 
 async function postLogin(login, password) {
-    const stringUrl = 'http://localhost:8080/api/auth/login'
+    const stringUrl = '/api/auth/login'
     let data = await fetch(stringUrl, {
         method: "POST",
         headers: {
