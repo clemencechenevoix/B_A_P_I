@@ -20,7 +20,7 @@ const TEXT_BUTTON = "submit"
 // api request
 
 async function postFlower(flowerName, familyName, localisationName) {
-    const stringUrl = 'http://localhost:8080/api/catalog/items'
+    const stringUrl = '/api/catalog/items'
     let data = await fetch(stringUrl, {
         method: "POST",
         headers: {
@@ -42,7 +42,7 @@ async function postFlower(flowerName, familyName, localisationName) {
 }
 
 async function putFlower(id, key, value) {
-    const stringUrl = 'http://localhost:8080/api/catalog/items/' + id.toString()
+    const stringUrl = '/api/catalog/items/' + id.toString()
     let data = await fetch(stringUrl, {
         method: "PUT",
         headers: {
@@ -63,7 +63,7 @@ async function putFlower(id, key, value) {
 }
 
 async function deleteFlower(id) {
-    const stringUrl = 'http://localhost:8080/api/catalog/items/' + id.toString()
+    const stringUrl = '/api/catalog/items/' + id.toString()
     let data = await fetch(stringUrl, {
         method: "DELETE",
         headers: {

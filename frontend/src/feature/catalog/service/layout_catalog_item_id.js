@@ -10,7 +10,7 @@ import {principalDiv} from "../../../general-service/service-page.js"
 
 // function
 async function getCatalog(id) {
-  const stringUrl = 'http://localhost:8080/api/catalog/items/' + id.toString()
+  const stringUrl = '/api/catalog/items/' + id.toString()
   const res = await fetch(stringUrl, {
       method: "GET"
   })

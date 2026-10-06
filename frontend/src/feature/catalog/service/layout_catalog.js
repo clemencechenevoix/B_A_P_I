@@ -38,7 +38,7 @@ const HASH_LINK = {
 // api request
 
 async function getCatalog(page) {
-    const stringUrl = 'http://localhost:8080/api/catalog/' + page.toString()
+    const stringUrl = '/api/catalog/' + page.toString()
     const res = await fetch(stringUrl, {
         method: "GET"
     })
