@@ -28,7 +28,7 @@ async function postFamily(familyName, familyDesc) {
         desc = familyDesc.toString()
     }
 
-    const stringUrl = 'http://localhost:8080/api/admin/family'
+    const stringUrl = '/api/admin/family'
     let data = await fetch(stringUrl, {
         method: "POST",
         headers: {
@@ -49,7 +49,7 @@ async function postFamily(familyName, familyDesc) {
 }
 
 async function postLocalisation(localisationName) {
-    const stringUrl = 'http://localhost:8080/api/admin/localisation'
+    const stringUrl = '/api/admin/localisation'
     let data = await fetch(stringUrl, {
         method: "POST",
         headers: {
@@ -69,7 +69,7 @@ async function postLocalisation(localisationName) {
 }
 
 async function apiUpdateFamily(id, key, value) {
-    const stringUrl = 'http://localhost:8080/api/admin/family/' + id.toString()
+    const stringUrl = '/api/admin/family/' + id.toString()
     let data = await fetch(stringUrl, {
         method: "PUT",
         headers: {
@@ -90,7 +90,7 @@ async function apiUpdateFamily(id, key, value) {
 }
 
 async function apiUpdateLocalisation(id, key, value) {
-    const stringUrl = 'http://localhost:8080/api/admin/localisation/' + id.toString()
+    const stringUrl = '/api/admin/localisation/' + id.toString()
     let data = await fetch(stringUrl, {
         method: "PUT",
         headers: {
@@ -111,7 +111,7 @@ async function apiUpdateLocalisation(id, key, value) {
 }
 
 async function deleteFamily(id) {
-    const stringUrl = 'http://localhost:8080/api/admin/family/' + id.toString()
+    const stringUrl = '/api/admin/family/' + id.toString()
     let data = await fetch(stringUrl, {
         method: "DELETE",
         headers: {
@@ -128,7 +128,7 @@ async function deleteFamily(id) {
 }
 
 async function deleteLocalisation(id) {
-    const stringUrl = 'http://localhost:8080/api/admin/localisation/' + id.toString()
+    const stringUrl = '/api/admin/localisation/' + id.toString()
     let data = await fetch(stringUrl, {
         method: "DELETE",
         headers: {

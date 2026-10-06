@@ -36,7 +36,7 @@ const HASH_LINK = {
 // function
 
 async function getFamily() {
-    const stringUrl = 'http://localhost:8080/api/admin/family'
+    const stringUrl = '/api/admin/family'
     const res = await fetch(stringUrl, {
         method: "GET",
         headers: {

@@ -36,7 +36,7 @@ const HASH_LINK = {
 // function
 
 async function getlocalisation() {
-    const stringUrl = 'http://localhost:8080/api/admin/localisation'
+    const stringUrl = '/api/admin/localisation'
     const res = await fetch(stringUrl, {
         method: "GET",
         headers: {
