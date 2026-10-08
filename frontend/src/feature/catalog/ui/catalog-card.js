@@ -49,7 +49,7 @@ export function renderFlowerCardId(divName, content, hashLink) {
     document.getElementById(divName).appendChild(divFlowerCard);
 }
 
-export function renderFlowerCardIdAdmin(divName, content, renderFlowerIdFunction, renderFlowerIdUpdateFunction, renderFlowerIdDeleteFunction, hashLink) {
+export function renderFlowerCardIdAdmin(divName, content, renderFlowerIdUpdateFunction, renderFlowerIdDeleteFunction, hashLink) {
     let divFlowerCard = createBalise("div", null, null, "divFlowerIdCard");
 
     let imgFlower = createImg()
@@ -81,7 +81,7 @@ export function renderFlowerCardIdAdmin(divName, content, renderFlowerIdFunction
     let imgFlowerDelete = createImg(hashLink["SRC_ICON_DELETE"], "iconTool")
     imgFlowerDelete.addEventListener("click", (event) => {
         clearcontent(divName)
-        renderFlowerIdDeleteFunction(divName, content["flowerid"], renderFlowerIdFunction, hashLink)
+        renderFlowerIdDeleteFunction(divName, content["flowerid"], hashLink)
     });
     divManagementTool.appendChild(imgFlowerDelete);
 

@@ -23,7 +23,7 @@ async function renderCatalogId(id, hashLink) {
   const result = data.result[0]
   
   if (requireAuthToken()) {
-    renderFlowerCardIdAdmin(principalDiv, result, renderCatalogId, renderCatalogIdUpdatePage, renderCatalogIdDeletePage, hashLink)
+    renderFlowerCardIdAdmin(principalDiv, result, renderCatalogIdUpdatePage, renderCatalogIdDeletePage, hashLink)
   } else {
     renderFlowerCardId(principalDiv, result, hashLink)
   }
