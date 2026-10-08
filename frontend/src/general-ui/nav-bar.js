@@ -3,7 +3,7 @@ import {clearcontent, createBalise, createImg} from  "../general-service/service
 
 // function
 
-export function renderNavBar(divName, number, numberTotal, renderfunction, role, hashLink) {
+export function renderNavBar(divName, number, numberTotal, renderfunction, hashLink) {
     let divNavBar = createBalise("div", null, null, "divNavBar")
     
     if (0 < number) {
@@ -11,14 +11,14 @@ export function renderNavBar(divName, number, numberTotal, renderfunction, role,
 
         imgLeftArrow.addEventListener("click", (event) => {
             clearcontent(divName)
-            renderfunction(role, number - 1)
+            renderfunction(parseInt(number) - 1)
         });
 
         divNavBar.appendChild(imgLeftArrow);
     }
 
     let pNumber = document.createElement("p")
-    pNumber.appendChild(document.createTextNode(parseInt(number) + " .. " + parseInt(numberTotal))); 
+    pNumber.appendChild(document.createTextNode(number.toString() + " .. " + numberTotal.toString())); 
     divNavBar.appendChild(pNumber);
 
     if (number < numberTotal) {        
@@ -26,7 +26,7 @@ export function renderNavBar(divName, number, numberTotal, renderfunction, role,
 
         imgRightArrow.addEventListener("click", (event) => {
             clearcontent(divName)
-            renderfunction(role, number + 1)
+            renderfunction(parseInt(number) + 1)
         });
 
         divNavBar.appendChild(imgRightArrow)
