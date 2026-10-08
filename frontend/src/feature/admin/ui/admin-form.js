@@ -182,7 +182,7 @@ export function renderUpdateFamilyForm(divName, familyId, hashLink) {
     let formUpdateFamily = createBalise("form", null, "form")
     createRowForm(formUpdateFamily, LABEL_UPDATE_FAMILY, "text", "familyName")
     createRowForm(formUpdateFamily, LABEL_UPDATE_FAMILY_DESC, "text", "familyDesc")
-    let submitButton = createBalise("p", TEXT_BUTTON)
+    let submitButton = createBalise("p", TEXT_BUTTON, "submitButton")
     submitButton.addEventListener("click", async (event) => {
         const data = new FormData(formUpdateFamily);
         let keys = []
