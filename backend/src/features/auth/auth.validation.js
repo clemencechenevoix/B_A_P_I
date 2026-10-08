@@ -8,7 +8,6 @@
 * @return {Function: next} or {Error} the next function or an error if the information is not valid
 */
 const validationLogin = (req, res, next) => {
-	console.log(req.body)
     if (req.body.usersPassword == null || req.body.usersLogin == null) {
 		return res.status(400).json({error: "usersPassword and usersLogin need to be specify"})
 	}
