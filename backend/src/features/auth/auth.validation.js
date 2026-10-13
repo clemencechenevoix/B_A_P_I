@@ -9,11 +9,11 @@
 */
 const validationLogin = (req, res, next) => {
     if (req.body.usersPassword == null || req.body.usersLogin == null) {
-		return res.status(400).json({error: "usersPassword and usersLogin need to be specify"})
+		return res.status(400).json({error: "usersPassword and usersLogin needs to be specified"})
 	}
 
 	if (isNaN(parseInt(req.body.usersPassword)) == false || isNaN(parseInt(req.body.usersLogin)) == false) {
-		return res.status(400).json({error: "usersPassword and usersLogin need to be string"})
+		return res.status(400).json({error: "usersPassword and usersLogin needs to be a string"})
 	}
 	req.params.id = parseInt(req.params.id)
 	next()
