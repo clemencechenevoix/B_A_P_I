@@ -68,16 +68,16 @@ const validationInformationUpdateUsers = (req, res, next) => {
 
     } catch (error) {
         if (error.message == 'NUMBER_GIVEN') {
-            return res.status(400).json({ error: "The value for this key need to be a string" });
+            return res.status(400).json({ error: "The value for this key needs to be a string" });
         }
         if (error.message == 'MISSING_INFORMATION') {
-            return res.status(400).json({ error: "The value for the variables key and value need to be entered " });
+            return res.status(400).json({ error: "The value for the variables key and value needs to be entered" });
         }
         if (error.message == 'NO_PERMISSION') {
             return res.status(423).json({ error: "Permission denied" });
         }
         if (error.message == 'TOO_MANY_CHARACTER') {
-            return res.status(400).json({ error: "There with too many character" });
+            return res.status(400).json({ error: "There are too many characters" });
         }
         console.log(error.message)  
     }

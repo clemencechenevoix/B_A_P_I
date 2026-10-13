@@ -46,7 +46,7 @@ const modifyProfil = async (req) => {
 			`, [req.body.values[index]])
 
 			if (result.rows.length != 0) {
-				throw new Error('USER_ALLREADY_EXISTE')
+				throw new Error('USER_ALREADY_EXISTE')
 			}
 		}
 		if (req.body.keys[index] == "usersPassword") {

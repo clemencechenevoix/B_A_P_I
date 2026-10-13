@@ -16,14 +16,14 @@ const updateProfil = async (req, res) => {
         res.status(200).json({ message: "Information modifyed correctly", result: result })
     } catch (err) {
         if (err.message == 'USERS_NOT_FOUND') {
-            res.status(409).json({ error: "The users was not found"})
+            res.status(409).json({ error: "The user was not found"})
         }
-        if (err.message == 'USER_ALLREADY_EXISTE') {
-            res.status(409).json({ error: "This Login is allready used by another user"})
+        if (err.message == 'USER_ALREADY_EXISTE') {
+            res.status(409).json({ error: "This login is already used by another user"})
         }
 
         console.error(err)
-        res.status(500).json({ error: 'Erreur serveur' })
+        res.status(500).json({ error: 'Server Error' })
     }
 }
 
