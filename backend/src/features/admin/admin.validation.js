@@ -15,7 +15,7 @@ const HASH_NOT_NULL = {"familyName": "ok", "localisationName": "ok"}
 */
 const validationId = (req, res, next) => {
 	if (isNaN(parseInt(req.params.id))) {
-		return res.status(400).json({error: "id need to be a number"})
+		return res.status(400).json({error: "Id needs to be a number"})
 	}
 	req.params.id = parseInt(req.params.id)
 	next()
@@ -84,16 +84,16 @@ const validationInformationUpdateLocalisation = (req, res, next) => {
 
     } catch (error) {
         if (error.message == 'NUMBER_GIVEN') {
-            return res.status(400).json({ error: "The value for this key need to be a string" });
+            return res.status(400).json({ error: "The value for this key needs to be a string" });
         }
         if (error.message == 'MISSING_INFORMATION') {
-            return res.status(400).json({ error: "The value for the variables key and value need to be entered " });
+            return res.status(400).json({ error: "The value for the variables key and value needs to be entered" });
         }
         if (error.message == 'NO_PERMISSION') {
             return res.status(423).json({ error: "Permission denied" });
         }
         if (error.message == 'TOO_MANY_CHARACTER') {
-            return res.status(400).json({ error: "There with too many character" });
+            return res.status(400).json({ error: "There are too many characters" });
         }
         console.log(error.message)  
     }
@@ -116,16 +116,16 @@ const validationInformationUpdateFamily = (req, res, next) => {
 
     } catch (error) {
         if (error.message == 'NUMBER_GIVEN') {
-            return res.status(400).json({ error: "The value for this key need to be a string" });
+            return res.status(400).json({ error: "The value for this key needs to be a string" });
         }
         if (error.message == 'MISSING_INFORMATION') {
-            return res.status(400).json({ error: "The value for the variables key and value need to be entered " });
+            return res.status(400).json({ error: "The value for the variables key and value needs to be entered" });
         }
         if (error.message == 'NO_PERMISSION') {
             return res.status(423).json({ error: "Permission denied" });
         }
         if (error.message == 'TOO_MANY_CHARACTER') {
-            return res.status(400).json({ error: "There with too many character" });
+            return res.status(400).json({ error: "There are too many characters" });
         }
         console.log(error.message)  
     }
@@ -140,15 +140,15 @@ const validationInformationUpdateFamily = (req, res, next) => {
 */
 const validationInformationCreateFamily = (req, res, next) => {
     if (req.body.familyName == null || req.body.familyName.length == 0) {
-		return res.status(400).json({ error: "The value for the variables familyName need to be entered " });
+		return res.status(400).json({ error: "The value for the variable familyName needs to be entered" });
 	}
 	
 	if (req.body.familyName.length > HASH_FAMILY["familyName"]) {
-		return res.status(400).json({ error: "Too many character for one of the value " });
+		return res.status(400).json({ error: "Too many characters for one of the value" });
 	}
 	
 	if (req.body.familyDesc != null && req.body.familyDesc.length > HASH_FAMILY["familyDesc"]) {
-		return res.status(400).json({ error: "Too many character for one of the value " });	
+		return res.status(400).json({ error: "Too many characters for one of the value" });	
 	}
 
 	next()
@@ -163,11 +163,11 @@ const validationInformationCreateFamily = (req, res, next) => {
 */
 const validationInformationCreateLocalisation = (req, res, next) => {
     if (req.body.localisationName == null || req.body.localisationName.length == 0) {
-		return res.status(400).json({ error: "The value for the variables localisationName need to be entered " });
+		return res.status(400).json({ error: "The value for the variable familyName needs to be entered" });
 	}
 	
 	if (req.body.localisationName.length > HASH_LOCALISATION["localisationName"]) {
-		return res.status(400).json({ error: "Too many character for one of the value " });
+		return res.status(400).json({ error: "Too many characters for one of the value	" });
 	}
 
 	next()

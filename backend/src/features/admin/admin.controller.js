@@ -15,7 +15,7 @@ const showFamily = async (req, res) => {
         res.status(200).json({ message: "Information correctly collected", result: result })
     } catch (err) {
         console.error(err)
-        res.status(500).json({ error: 'Erreur serveur' })
+        res.status(500).json({ error: 'Server Error' })
     }
 }
 
@@ -33,7 +33,7 @@ createFamily = async (req, res) => {
         res.status(200).json({ message: "Family correctly created"})
     } catch (err) {
         console.error(err)
-        res.status(500).json({ error: 'Erreur serveur' })
+        res.status(500).json({ error: 'Server Error' })
     }
 }
 
@@ -52,7 +52,7 @@ const updateFamily = async (req, res) => {
 		    res.status(404).json({ error: "Family id not found"})
 	    }
         console.error(err)
-        res.status(500).json({ error: 'Erreur serveur' })
+        res.status(500).json({ error: 'Server Error' })
     }
 }
 
@@ -71,7 +71,7 @@ const deleteFamily = async (req, res) => {
 		    res.status(404).json({ error: "Family id not found"})
 	    }
         console.error(err)
-        res.status(500).json({ error: 'Erreur serveur' })
+        res.status(500).json({ error: 'Server Error' })
     }
 }
 
@@ -87,7 +87,7 @@ const showLocalisation = async (req, res) => {
         res.status(200).json({ message: "Information correctly collected", result: result })
     } catch (err) {
         console.error(err)
-        res.status(500).json({ error: 'Erreur serveur' })
+        res.status(500).json({ error: 'Server Error' })
     }
 }
 
@@ -104,7 +104,7 @@ const createLocalisation = async (req, res) => {
         res.status(200).json({ message: "Localisation correctly created"})
     } catch (err) {
         console.error(err)
-        res.status(500).json({ error: 'Erreur serveur' })
+        res.status(500).json({ error: 'Server Error' })
     }
 }
 
@@ -123,7 +123,7 @@ const updateLocalisation = async (req, res) => {
 		    res.status(404).json({ error: "Localisation id not found"})
 	    }
         console.error(err)
-        res.status(500).json({ error: 'Erreur serveur' })
+        res.status(500).json({ error: 'Server Error' })
     }
 }
 
@@ -142,7 +142,7 @@ const deleteLocalisation = async (req, res) => {
 		    res.status(404).json({ error: "Localisation id not found"})
 	    }
         console.error(err)
-        res.status(500).json({ error: 'Erreur serveur' })
+        res.status(500).json({ error: 'Server Error' })
     }
 }
 
