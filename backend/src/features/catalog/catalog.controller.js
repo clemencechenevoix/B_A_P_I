@@ -15,7 +15,7 @@ const showFlower = async (req, res) => {
         res.status(200).json({ message: "Information correctly collected", result: result })
     } catch (err) {
         console.error(err)
-        res.status(500).json({ error: 'Erreur serveur' })
+        res.status(500).json({ error: 'Server Error' })
     }
 }
 
@@ -36,7 +36,7 @@ const showFlowerId = async (req, res) => {
         }
 
         console.error(err)
-        res.status(500).json({ error: 'Erreur serveur' })
+        res.status(500).json({ error: 'Server Error' })
     }
 }
 
@@ -59,7 +59,7 @@ const createFlower = async (req, res) => {
         }
 	
         console.error(err)
-        res.status(500).json({ error: 'Erreur serveur' })
+        res.status(500).json({ error: 'Server Error' })
     }
 }
 
@@ -85,7 +85,7 @@ const updateFlower = async (req, res) => {
         }
 	
         console.error(err)
-        res.status(500).json({ error: 'Erreur serveur' })
+        res.status(500).json({ error: 'Server Error' })
     }
 }
 
@@ -105,7 +105,7 @@ const deleteFlower = async (req, res) => {
 	}
 
         console.error(err)
-        res.status(500).json({ error: 'Erreur serveur' })
+        res.status(500).json({ error: 'Server Error' })
     }
 }
 
